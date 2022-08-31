@@ -15,23 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from libros import views
 
 urlpatterns = [
-
     path('admin/', admin.site.urls),
-    path('', include('libros.urls')),
-
-    #path('admin/', admin.site.urls),
-    #path('', views.api_root),
-    #path('libros/', views.LibroLists.as_view(), name='libros-list'),
-    #path('libros/<int:pk>/', views.LibroDetails.as_view(), name='libro-detail'),
-    #path('users/', views.UserList.as_view(), name='user-list'),
-    #path('users/<int:pk>/', views.UserDetail.as_view(), name='user-detail'),
-
-    #en api ponemos nuestro endpoint
-    #path('api/libros/', LibroLists.as_view()),
-    #path('api/libros/<int:pk>/',LibroDetails.as_view()),
-    #path('api/users/', UserList.as_view()),
-    #path('api/users/<int:pk>/', UserDetail.as_view())
+    path('', include('api.urls')),
 ]
